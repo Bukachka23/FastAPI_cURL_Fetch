@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cURL/Fetch to Python Transformer</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <svg class="python-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 0C22.4 0 24 10 24 10v14h26v4H15.6S0 25.8 0 50s15.6 22 15.6 22H24v-20c0-11 9-20 20-20h32c8.8 0 16-7.2 16-16V16c0-8.8-7.2-16-16-16H50zm-6 10c2.8 0 5 2.2 5 5s-2.2 5-5 5-5-2.2-5-5 2.2-5 5-5z" fill="#4B8BBE"/>
+            <path d="M50 100c27.6 0 26-10 26-10V76H50v-4h34.4S100 74.2 100 50 84.4 28 84.4 28H76v20c0 11-9 20-20 20H24c-8.8 0-16 7.2-16 16v20c0 8.8 7.2 16 16 16h26zm6-10c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z" fill="#FFD43B"/>
+        </svg>
+
+        <h1>cURL/Fetch to Python Transformer</h1>
+
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('curl')">cURL</button>
+            <button class="tab" onclick="switchTab('fetch')">Fetch</button>
+        </div>
+
+        <div id="curlContent" class="content active">
+            <textarea id="curlInput" placeholder="Enter your cURL command here..."></textarea>
+            <button class="clear-button" onclick="clearInput('curlInput')">Clear</button>
+        </div>
+
+        <div id="fetchContent" class="content">
+            <textarea id="fetchInput" placeholder="Enter your Fetch code here..."></textarea>
+            <button class="clear-button" onclick="clearInput('fetchInput')">Clear</button>
+        </div>
+
+        <div class="options">
+            <div class="radio-group">
+                <input type="radio" id="requests" name="library" value="requests" checked>
+                <label for="requests">Requests</label>
+                <input type="radio" id="httpx" name="library" value="httpx">
+                <label for="httpx">HTTPX</label>
+            </div>
+            <button onclick="transformCode()">CONVERT TO PYTHON</button>
+        </div>
+
+        <div id="result"></div>
+        <button id="copyButton" onclick="copyResult()">Copy Result</button>
+    </div>
+
+    <div class="copy-notification" id="copyNotification">Copied to clipboard!</div>
+
+    <script src="/static/js/main.js"></script>
+</body>
+</html>

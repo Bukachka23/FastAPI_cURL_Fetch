@@ -1,0 +1,15 @@
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+exclude = ["*/migrations/*"]
+
+select = [
+  "E",
+  "F",
+  "DJ",
+  "UP",
+  "I",
+
+]
+
+[tool.ruff.isort]
